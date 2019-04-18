@@ -1,0 +1,336 @@
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+
+@font-face {
+    font-family: "KlinicSlab";
+    src: url("/fonts/KlinicSlab/KlinicSlabBook.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Rawson";
+    src: url("/fonts/Rawson/Rawson-Regular.eot");
+}
+
+// ELEMENTS
+
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'Rawson', sans-serif; 
+    font-size: .8em;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "KlinicSlab";
+    color: $gray-300;
+    font-weight: 100;
+}
+
+h1 { 
+    color: $red;
+    font-size: $h1-font-size;
+}
+
+h2 {
+    color: $gray-200;
+    font-size: $h2-font-size;
+}
+
+h3 {
+    color: $gray-200;
+    font-size: $h3-font-size;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: $h5-font-size;
+    color: $gray-100;
+    letter-spacing: .125em;
+    font-weight: 500;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+}
+
+a {
+    color: $gray-300;
+    text-decoration: none;
+}
+
+p {
+    font-size: $p-font-size-large;
+    color: $gray-300;
+    font-weight: 100;
+    line-height: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+// UTILS
+.text-red { color: $red }
+.text-gold { color: $gold }
+.text-slate { color: $slate }
+
+// COMPONENTS
+
+.btn {
+    border-radius: $border-radius;
+    padding: 1em 3em;
+    border: 1px solid $red;
+    &.btn-inverse {
+        color: $white;
+        border: 1px solid $white;
+    }
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.container { 
+    max-width: 1080px;
+    margin: 0 auto;
+ }
+
+.container-fluid { max-width: 100%; }
+
+//  ============= <== TOP NAV ==> ==============
+
+$nav-height: 3.5rem;
+.top-nav {
+    padding: 0 1rem;
+    height: $nav-height;
+    display: flex;
+    ul {
+        display: flex;
+        line-height: $nav-height;
+        padding: 0;
+        margin: 0;
+        li {
+            list-style: none;
+            padding: 0 10px;
+            &:first-of-type { padding-left: 0; }
+            &:last-of-type { padding-right: 0; }
+        }
+    } 
+    
+    .brand-logo { 
+        margin: 0 auto; 
+        width: 2rem;
+    }
+
+    .donate-btn {
+        background-color: $red;
+        color: $white;
+        letter-spacing: .15rem;
+        padding: .5rem;
+    }
+}
+
+// BODY
+
+section.home-hero {
+    background-color: $gray-300;
+    position: relative;
+    overflow: hidden;
+    height: 560px;
+
+    .content {
+        
+        text-align: center; 
+        padding: 10rem 10px 0;
+        z-index: 100;
+
+        .logo {
+            width: 90%;
+        }
+        
+        p {
+            font-weight: 300;
+            color: $white;
+        }
+    }
+    .dot-grid {
+        width: 10.5em;
+        position: absolute;
+        top: 0;
+    }
+    .hero-house {
+        width: 35em;
+        position: absolute;
+        top: 0;
+        right: -18em;
+    }
+}
+
+section:nth-of-type(2) {
+    .content {
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+section:nth-of-type(3) {
+    background-color: $pearlbush; 
+    
+    .content {
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .act-toggle {
+        .letters {
+            svg {
+                
+            }
+            .act-a {
+                &.active {
+                    path {
+                        fill: $red;
+                    }
+                }
+            }
+            .act-c {
+                margin-left: -5%;
+                &.active {
+                    path {
+                        fill: $gold;
+                    }
+                }
+            }
+            .act-t {
+                margin-left: -3%;
+                &.active {
+                    path {
+                        fill: $slate;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+// ======================= <== MEDIA QUERIES ==> ================================
+
+@media only screen and (min-width: 768px) {
+    html { font-size: .9vw }
+    .hide-mobile { display: inherit; }
+    .top-nav { padding: 0 2rem; }
+
+    section.home-hero {
+        margin: 0 2em;
+        height: 44vw;
+        overflow: inherit;
+
+        .content {
+            margin: 0 auto;
+            max-width: 26%;
+            position: absolute;
+            top: 30%;
+            left: 12%;
+            padding: 0;
+        }
+
+        .hero-image {
+            width: 59%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 50;
+        }
+
+        .dot-grid {
+            width: 9.8%;
+        }
+
+        .hero-house {
+            width: 41.25%;
+            top: -13%;
+            right: 16.5%
+        }
+
+        .hero-footer {
+            position: absolute;
+            display: flex;
+            bottom: 0;
+            left: 5em;
+            .h7 { color: $gray-100; }
+            .line {
+                border-top: solid 1px $gray-100; 
+                width: 40em;
+                height: 1px;
+                margin-top: 3em;
+                margin-left: 2em;
+            }
+            
+        }
+    }
+
+    section:nth-of-type(2) {
+        position: relative;
+        height: 44vw;
+        .content {
+            position: absolute;
+            text-align: left;
+            padding: 0;
+            width: 43%;
+            left: 9%;
+            top: 5%;
+        }
+
+        .img-grid {
+            position: absolute;
+            right: 10%;
+            top: 12%;
+            width: 29%;
+            z-index: 100;
+        }
+
+        .dot-grid {
+            position: absolute;
+            right: 7.5%;
+            width: 10.5%;
+            top: 21%;
+            z-index: 50;
+        }
+    }
+
+    section:nth-of-type(3) {
+        position: relative;
+        height: 48vw;
+        .content {
+            text-align: left;
+            padding: 0;
+            position: absolute;
+            width: 38%;
+            left: 52%;
+            top: 22%;
+        }
+
+        .act-toggle {
+
+            position: absolute;
+            width: 30%;
+            .letters {
+                svg:nth-of-type(1) { 
+                    width: 39% 
+                }
+                svg:nth-of-type(2) { 
+                    width: 38% 
+                }
+                svg:nth-of-type(3) { 
+                    width: 20% 
+                }
+            }
+        }
+    }
+}

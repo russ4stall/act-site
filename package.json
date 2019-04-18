@@ -1,0 +1,16 @@
+{
+  "name": "act-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 sass/main.scss public/style.css",
+    "css:watch": "npm run css:compile -- --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "node-sass": "^4.11.0"
+  }
+}
