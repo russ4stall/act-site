@@ -89,9 +89,12 @@ li {
 
 .btn {
     border-radius: $border-radius;
-    padding: 1em 3em;
+    padding: .5em;
     border: 1px solid $red;
     display: inline-block;
+    font-family: 'Montserrat';
+    font-size: $p-font-size-medium;
+
     &.btn-inverse {
         color: $white;
         border: 1px solid $white;
@@ -135,6 +138,7 @@ $nav-height: 3.5rem;
         color: $white;
         letter-spacing: .15rem;
         padding: .5rem;
+        display: inline;
     }
 }
 
@@ -322,8 +326,12 @@ section#EmpoweringMinorityTalent {
 }
 
 section#HelpMakeItHappen {
+    background-color: $pearlbush;
     text-align: center;
+    
+
     .partner-links {
+        bottom: 50%;
         .link-box {
             position: relative;
             overflow: hidden;
@@ -332,20 +340,28 @@ section#HelpMakeItHappen {
                 position: absolute;
                 top: 0;
                 left: 0;
-                z-index: -1;
+                z-index: 1;
                 width: 100%;
             }
             h2 {
                 color: $white;
+                position: relative;
                 z-index: 100;
+                margin-top: .75em;
+                margin-bottom: .25em;
             }
             .btn {
                 color: $white;
                 background-color: $red;
+                position: relative;
                 z-index: 100;
                 margin-bottom: 3em;
             }
         }
+    }
+
+    .powerful-content {
+        margin: 1em;
     }
 }
 
@@ -373,7 +389,7 @@ section#HelpMakeItHappen {
         }
 
         .hero-image {
-            width: 59%;
+            width: 58%;
             position: absolute;
             right: 0;
             bottom: 0;
@@ -513,7 +529,7 @@ section#HelpMakeItHappen {
             position: absolute;
             width: 30%;
             left: 10%;
-            bottom: 40%;
+            bottom: 45%;
             z-index: 100;
 
         }
@@ -522,7 +538,7 @@ section#HelpMakeItHappen {
             position: absolute;
             width: 10.5%;
             left: 32%;
-            bottom: 34%;
+            bottom: 39%;
             z-index: 50;
         }
 
@@ -530,22 +546,41 @@ section#HelpMakeItHappen {
             position: absolute;
             width: 40%;
             left: 50%;
-            bottom: 45%;
+            bottom: 50%;
         }
         
     }
 
     section#HelpMakeItHappen {
-        height: 40vw;
-        .partner-links {
-            display: flex;
-            width: 80%;
-            margin: auto;
-            .link-box {
-                width: 30%;
+        height: 50vw;
+        .content {
+            position: absolute;
+            bottom: 70%;
+            width: 100%;
+
+            .partner-links {
+                display: flex;
+                width: 90%;
                 margin: auto;
-                
+                .link-box {
+                    width: 32%;
+                    margin: auto;
+                    h2 {    
+                        margin-top: 1.5em;
+                    }
+                    .btn {
+                        margin-bottom: 4em;
+                    }
+                }
             }
+        }
+
+        .powerful-content {
+            position: absolute;
+            width: 40%;
+            bottom: 20%;
+            left: 15%;
+            text-align: left;
         }
         
     }
