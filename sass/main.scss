@@ -102,11 +102,8 @@ li {
 }
 
 .container { 
-    max-width: 1080px;
-    margin: 0 auto;
- }
-
-.container-fluid { max-width: 100%; }
+    overflow: hidden;
+}
 
 //  ============= <== TOP NAV ==> ==============
 
@@ -284,6 +281,44 @@ section:nth-of-type(3) {
     }        
 }
 
+section:nth-of-type(4) {
+    .content {
+        padding: 0 1em;
+        text-align: center;
+    }
+}
+section:nth-of-type(5) {
+    text-align: center;
+    .content {
+        padding: 1em;
+    }
+
+    .stats {
+        padding: 1em;
+        div {
+            margin: 0 auto;
+            h1 {
+                font-family: 'Montserrat';
+                margin: 0 auto;
+                width: 3em;
+                line-height: 3em;
+                height: 3em;
+                border-radius: 50%;
+                background-color: #efefef;
+                border: 0.15em solid #f8f8f8;
+            }
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+section:nth-of-type(6) {
+    .content {
+        padding: 0 1em;
+        text-align: center;
+    }
+}
 
 
 // ======================= <== MEDIA QUERIES ==> ================================
@@ -292,6 +327,7 @@ section:nth-of-type(3) {
     html { font-size: .9vw }
     .hide-mobile { display: inherit; }
     .top-nav { padding: 0 2rem; }
+    section { position: relative; }
 
     section.home-hero {
         margin: 0 2em;
@@ -388,8 +424,83 @@ section:nth-of-type(3) {
             width: 30%;
             top: 10%;
             left: 13%;
-
-            
         }
+
+        .img-pencils {
+            position: absolute;
+            width: 50%;
+            right: -23%;
+            top: 68%;
+            z-index: 100;
+        }
+
+        .dot-grid-gray {
+            position: absolute;
+            width: 45%;
+            right: -2%;
+            bottom: -14%;
+        }
+    }
+
+    section:nth-of-type(4) {
+        height: 45vw;
+        position: relative;
+        .content {
+            position: absolute;
+            width: 40%;
+            left: 10%;
+            top: 8%;
+        }   
+    }
+    section:nth-of-type(5) { // Our Visible Impact
+        position: relative;
+        height: 110vw;
+        .content {
+            width: 60%;
+            margin: 0 auto 10%;
+        }
+        .stats {
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            div {
+                width: 20%;
+                h1 {
+                    font-family: "Montserrat"; 
+                    
+                }
+            }
+        }
+        img {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    section:nth-of-type(6) {
+        height: 45vw;
+        
+        .img-grid {
+            position: absolute;
+            width: 30%;
+            left: 10%;
+            bottom: 40%;
+        }
+
+        .dot-grid {
+            position: absolute;
+            width: 30%;
+            left: 10%;
+            bottom: 40%;
+        }
+
+        .content {
+            position: absolute;
+            width: 40%;
+            left: 50%;
+            bottom: 45%;
+        }
+        
     }
 }
