@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "css:compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 sass/main.scss public/style.css",
-    "css:watch": "npm run css:compile -- --watch"
+    "css:watch": "npm run css:compile -- --watch",
+    "dev": "concurrently --kill-others \"npm run css:watch\"  \"live-server public\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^4.3.1",
+    "concurrently": "^4.1.0",
+    "live-server": "^1.2.1",
     "node-sass": "^4.11.0"
   }
 }
