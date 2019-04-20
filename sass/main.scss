@@ -76,6 +76,13 @@ ul {
     margin:0;
 }
 
+.nav {
+    display: flex;
+    .nav-item {
+        margin: auto;
+    }
+}
+
 li {
     list-style: none;
 }
@@ -84,6 +91,14 @@ li {
 .text-red { color: $red }
 .text-gold { color: $gold }
 .text-slate { color: $slate }
+.text-white { color: $white }
+.text-dark { color: $gray-200 }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.d-block { display: block; }
+.d-inline-block { display: inline-block; }
+
+
 
 // COMPONENTS
 
@@ -91,13 +106,24 @@ li {
     border-radius: $border-radius;
     padding: .5em;
     border: 1px solid $red;
+    background-color: $red;
+    color: $white;
     display: inline-block;
     font-family: 'Montserrat';
     font-size: $p-font-size-medium;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: darken($red, 10%);
+    }
 
     &.btn-inverse {
-        color: $white;
         border: 1px solid $white;
+        background-color: transparent;
+        &:hover {
+            background-color: $white;
+            color: $gray-200;
+        }
     }
 }
 
@@ -351,8 +377,6 @@ section#HelpMakeItHappen {
                 margin-bottom: .25em;
             }
             .btn {
-                color: $white;
-                background-color: $red;
                 position: relative;
                 z-index: 100;
                 margin-bottom: 3em;
@@ -369,7 +393,53 @@ section#HelpMakeItHappen {
         margin:2em;
     }
 }
+// ==================== <== FOOTER ==> ======================
 
+footer {
+    overflow: hidden;
+    position: relative;
+    background-color: $gray-300;
+    text-align: center;
+    height: 800px;
+
+    .content {
+        position: relative;
+        z-index: 100;
+    }
+
+    h1 {
+        margin-bottom: 1em;
+    }
+
+    .nav {
+        margin: 5em auto;
+        width: 90%;
+
+        .nav-item {
+            img {
+                width: 80%;
+            }
+        }
+    }
+
+    .logo {
+        margin-top: 5em;
+        width: 75%;
+    }
+
+    .img-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .dot-grid {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 20%;
+    }
+}
 
 // ======================= <== MEDIA QUERIES ==> ================================
 
@@ -528,7 +598,7 @@ section#HelpMakeItHappen {
             bottom: 0;
         }
     }
-    
+
     section#EmpoweringMinorityTalent {
         height: 45vw;
         
@@ -614,6 +684,15 @@ section#HelpMakeItHappen {
     section#ThoughtsFromOurCommunity {
         height: 40vw;
         text-align: center;
+    }
 
+    footer {
+        height: 47vw;
+        .content {
+            margin-top: 10em;
+        }
+        .nav {  width: 30%; }
+        .logo { width: 15%; }
+        .dot-grid { width: 10%; }
     }
 }
