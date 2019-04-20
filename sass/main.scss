@@ -18,7 +18,7 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     font-family: 'Rawson', sans-serif; 
-    font-size: .8em;
+    font-size: .5em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -444,7 +444,7 @@ footer {
 // ======================= <== MEDIA QUERIES ==> ================================
 
 @media only screen and (min-width: 768px) {
-    html { font-size: .9vw }
+    body { font-size: .8vw }
     .hide-mobile { display: inherit; }
     .top-nav { padding: 0 2rem; }
     section { position: relative; }
