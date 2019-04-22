@@ -13,12 +13,13 @@
 }
 
 // ELEMENTS
-
+html {
+    font-size: .5em;
+}
 body {
     padding: 0 !important;
     margin: 0 !important;
     font-family: 'Rawson', sans-serif; 
-    font-size: .5em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -118,7 +119,7 @@ li {
     transition: all 0.3s ease;
     
     &:hover {
-        background-color: darken($red, 10%);
+        background-color: darken($red, 10%) !important;
     }
 
     &.btn-inverse {
@@ -150,7 +151,7 @@ li {
 
 $nav-height: 3.5rem;
 .top-nav {
-    padding: 0 1rem;
+    padding: 1rem 2rem;
     height: $nav-height;
     display: flex;
     ul {
@@ -226,7 +227,12 @@ section#WhyWeAct {
         text-align: center;
         padding-left: 1em;
         padding-right: 1em;
-        
+        img {
+            position: absolute;
+            width: 10rem;
+            bottom: 36rem;
+            right: 52rem;
+        }
     }
 }
 
@@ -478,6 +484,15 @@ section#ThoughtsFromOurCommunity {
                     font-family: 'Montserrat';
                     font-weight: 500;
                 }
+
+                .quote {
+                    img {
+                        position: absolute;
+                        width: 8rem;
+                        bottom: 7rem;
+                        right: 52rem;
+                    }
+                }
                 
             }
         }
@@ -516,8 +531,6 @@ footer {
     }
 
     .donate-btn {
-        //position: relative;
-        background-color: $red;
         color: $white;
         letter-spacing: .15rem;
         padding: .5rem;
@@ -550,9 +563,8 @@ footer {
 // ======================= <== MEDIA QUERIES ==> ================================
 
 @media only screen and (min-width: 768px) {
-    body { font-size: .8vw }
+    html { font-size: .8vw }
     .hide-mobile { display: inherit; }
-    .top-nav { padding: 0 2rem; }
     section { position: relative; }
 
     section#HomeHero {
@@ -616,17 +628,6 @@ footer {
 
             .quote {
                 position: relative;
-                &::before {
-                    content: "";
-                    background-image: url(img/quotation-marks@2x.png);
-                    background-size: 100%;
-                    width: 17%;
-                    height: 48.5%;
-                    display: inline-block;
-                    position: absolute;
-                    right: 97%;
-                    bottom: 74%;
-                }
             }
         }
 
@@ -704,12 +705,12 @@ footer {
         }
 
     }
-    section#OurVisibleImpact { // Our Visible Impact
+    section#OurVisibleImpact {
         position: relative;
         height: 110vw;
         .content {
             width: 47.5%;
-            margin: 0 auto 10%;
+            margin: 0 auto;
         }
         .stats {
             width: 90%;
@@ -825,21 +826,11 @@ footer {
                     .quote {
                         margin: 1em 5em;
                         position: relative;
-                        &::before {
-                            content: "";
-                            background-image: url(img/quotation-marks@2x.png);
-                            background-size: 100%;
-                            width: 17%;
-                            height: 75%;
-                            display: inline-block;
-                            position: absolute;
-                            right: 96%;
-                            bottom: 65%;
-                        }
                     }
                 }
             }
         }
+        
         
     }
 
@@ -853,3 +844,7 @@ footer {
         .dot-grid { width: 10%; }
     }
 }
+
+// @media only screen and (min-width: 1080px) {
+//     html { font-size: .6vw }
+// }
