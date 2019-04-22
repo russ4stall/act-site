@@ -140,9 +140,6 @@ li {
     display: inline-block;
 }
 
-
-
-
 .container { 
     overflow: hidden;
 }
@@ -151,6 +148,7 @@ li {
 
 $nav-height: 3.5rem;
 .top-nav {
+    position: relative;
     padding: 1rem 2rem;
     height: $nav-height;
     display: flex;
@@ -164,10 +162,17 @@ $nav-height: 3.5rem;
             &:first-of-type { padding-left: 0; }
             &:last-of-type { padding-right: 0; }
         }
+
+        &.social {
+            padding-top: .5rem;
+            margin-left: auto;
+        }
     } 
     
     .brand-logo { 
-        margin: 0 auto; 
+        position: absolute;
+        left: 50%;
+        margin: .5rem; 
         width: 2rem;
     }
 
