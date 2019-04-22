@@ -13,7 +13,10 @@
     <nav class="top-nav">
         <ul>
             <li>
-                <a href="#" class="btn donate-btn">DONATE</a>
+                <a href="#" class="btn donate-btn">
+                    <img src="img/icon-donate-heart.svg" alt="">
+                    DONATE
+                </a>
             </li>
             <li><a href="#">Partner With Us</a></li>
         </ul>
@@ -46,7 +49,7 @@
         <section id="WhyWeAct">
             <div class="content">
                 <h1>Why We Act</h1>
-                <h3>Lack of skill diversity in founding teams is still one of the top reasons young startups fail -
+                <h3 class="quote">Lack of skill diversity in founding teams is still one of the top reasons young startups fail -
                     "Not the right team" was ranked #3 out of 20 reasons startups fail.</h3>
                 <h5>Source</h5>
                 <p>
@@ -149,8 +152,52 @@
                     experience for selected students.
                 </p>
             </div>
-            <div class="program-toggle">
-                <ul></ul>
+            <div class="program-slider">
+                    <ul class="program-titles nav">
+                            <li class="program-toggle program-toggle-1 active nav-item text-center" data-toggle-order="1">
+                                <h5>Environment</h5>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="program-toggle program-toggle-2 nav-item text-center" data-toggle-order="2">
+                                <h5>Education</h5>
+                                <span class="dot"></span>
+                            </li>
+                            <li class="program-toggle program-toggle-3 nav-item text-center" data-toggle-order="3">
+                                <h5>Exposure</h5>
+                                <span class="dot"></span>
+                            </li>
+                        </ul>
+                        <ul class="program-descriptions">
+                            <li class="program-toggle program-toggle-1 active" data-toggle-order="1">
+                                <img src="img/icon-environment.svg" alt="">
+                                <p class="text-sm">
+                                    Fully funded housing fellowship with sponsored amenities
+                                    such as co-working memberships and utilities to ensure
+                                    fellows’ focus on building their company and less on their
+                                    bottom line. Houses are provided by the program and
+                                    intentionally designed to promote collaboration.
+                                </p>
+                            </li>
+                            <li  class="program-toggle program-toggle-2" data-toggle-order="2">
+                                <img src="img/icon-education.svg" alt="">
+                                <p  class="text-sm">
+                                    To develop the entrepreneurial mindset within our fellows,
+                                    we send selected students to skill-related boot camps and
+                                    facilitate them through our curriculum. Additionally, we pair
+                                    each fellow with a dedicated mentor to provide specific
+                                    subject matter expertise and maximize performance.
+                                </p>
+                            </li>
+                            <li class="program-toggle program-toggle-3" data-toggle-order="3">
+                                <img src="img/icon-exposure.svg" alt="">
+                                <p class="text-sm">
+                                    Throughout the program students engage with a variety of
+                                    peers, industry leaders, mentors, and investors to expand
+                                    their social network and drive opportunities either as
+                                    entrepreneurs or intrapreneurs.
+                                </p>
+                            </li>
+                        </ul>
             </div>
         </section>
         <section id="OurVisibleImpact">
@@ -234,10 +281,42 @@
             <img class="dot-grid hide-mobile" src="img/dot-grid-gray@2x.png" alt="">
 
         </section>
-        <section id="#ThoughtsFromOurCommunity">
+        <section id="ThoughtsFromOurCommunity">
             <div class="content">
                 <h1>Thoughts From Our Community</h1>
-
+                <div class="testimonials mx-auto">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <img src="img/arrow-left@2x.png" alt="">
+                        </li>
+                        <li class="nav-item testimonial-toggle" data-toggle-order="1">
+                            <img class="photo" src="img/img-shawnta-lg@2x.jpg" alt="">
+                        </li>
+                        <li class="nav-item testimonial-toggle active" data-toggle-order="2">
+                            <img class="photo" src="img/img-andrew-lg@2x.jpg" alt="">
+                        </li>
+                        <li class="nav-item testimonial-toggle" data-toggle-order="3">
+                            <img class="photo" src="img/img-scott-lg@2x.jpg" alt="">
+                        </li>
+                        <li class="nav-item">
+                            <img src="img/arrow-right@2x.png" alt="">
+                        </li>
+                    </ul>
+                    <ul>
+                        <li> 
+                            <div class="testimonial">
+                                <h3 class="name" >Andrew Gillum</h3>
+                                <div class="title">Previous Mayor of Tallahassee, FL</div>
+                                <p class="quote">
+                                    "In Tallahassee, we understand the importance of investing in our startup and entrepreneurial communities.
+                                    Providing a utility credit for the ACT House is just one way that we can help create opportunities for those new businesses to create local jobs."
+                                </p>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
             
         </section>
@@ -251,7 +330,9 @@
                     <li class="nav-item"><a href="#"><img src="img/icon-insta@2x.png" alt=""></a></li>
                     <li class="nav-item"><a href="#"><img src="img/icon-linkedin@2x.png" alt=""></a></li>
                 </ul>
-                <a class="btn" href="#">Donate</a>
+                <a class="btn donate-btn" href="#">
+                    <img src="img/icon-donate-heart.svg" alt="">
+                    Donate</a>
                 <img class="logo d-block mx-auto" src="img/act-logo.svg" alt="">
                 <p class="text-white">&copy; Copyright 2019 ACThouse Inc.</p>
             </div>
@@ -267,6 +348,13 @@
                 var letter = $(this).data("act-letter");
                 var selector = ".act-" + letter + "-toggle";
                 $(".act-toggle").removeClass("active");
+                $(selector).addClass("active");
+            });
+
+            $(".program-toggle").click( function () {
+                var toggleOrder = $(this).data("toggle-order");
+                var selector = ".program-toggle-" + toggleOrder;
+                $(".program-toggle").removeClass("active");
                 $(selector).addClass("active");
             });
         });

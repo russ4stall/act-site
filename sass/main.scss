@@ -98,7 +98,10 @@ li {
 .mx-auto { margin-left: auto; margin-right: auto; }
 .d-block { display: block; }
 .d-inline-block { display: inline-block; }
-
+.hide-mobile { display: none; }
+.text-sm { font-size: $p-font-size-small }
+.text-md { font-size: $p-font-size-medium }
+.text-lg { font-size: $p-font-size-large }
 
 
 // COMPONENTS
@@ -128,9 +131,16 @@ li {
     }
 }
 
-.hide-mobile {
-    display: none;
+.dot {
+    height: 1em;
+    width: 1em;
+    background-color: $wafer;
+    border-radius: 50%;
+    display: inline-block;
 }
+
+
+
 
 .container { 
     overflow: hidden;
@@ -161,15 +171,22 @@ $nav-height: 3.5rem;
     }
 
     .donate-btn {
+        //position: relative;
         background-color: $red;
         color: $white;
         letter-spacing: .15rem;
         padding: .5rem;
         display: inline;
+        img {
+            width: 10%
+        }
     }
 }
 
 // BODY
+.content {
+    padding: 2em;
+}
 
 section.home-hero {
     background-color: $gray-300;
@@ -209,6 +226,7 @@ section#WhyWeAct {
         text-align: center;
         padding-left: 1em;
         padding-right: 1em;
+        
     }
 }
 
@@ -226,6 +244,12 @@ section#TheActModel {
             width: 75%;
             margin: 0 auto;
             display: flex;
+
+            .act-toggle {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
 
             .act-a-toggle {
                 z-index: 1;
@@ -261,17 +285,18 @@ section#TheActModel {
                 color: $wafer;
                 margin: 0 auto;
                 text-align: center;
+                
+                &.act-toggle {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
                 h5 {
                     margin-bottom: 1em;
                     color: $wafer;
                 }
-                .dot {
-                    height: 1em;
-                    width: 1em;
-                    background-color: $wafer;
-                    border-radius: 50%;
-                    display: inline-block;
-                }
+                
 
                 &.act-a-toggle.active {
                     h5 { color: $red; }
@@ -290,7 +315,7 @@ section#TheActModel {
         }
 
         ul.act-descriptions {
-            padding: 0 10px;
+            padding: 10px 10px;
             li {
                 display: none;
 
@@ -315,6 +340,34 @@ section#OurProgram {
     .content {
         padding: 0 1em;
         text-align: center;
+    }
+
+    .program-slider {
+        z-index: 1000;
+        .program-titles {
+            li {
+                &:hover { cursor: pointer; }
+                h5 { color: lighten($gray-100, 50%); }
+                .dot { background-color: lighten($gray-100, 50%); }
+
+                &.active {
+                    h5 { color: $red; }
+                    .dot { background-color: $red; }
+                }
+            }
+        }
+
+        .program-descriptions {
+            li {
+                display: none;
+                margin-top: 10px;
+                padding: 1em;
+                &.active {
+                    display: flex;
+                }
+                p { padding: 1em; }
+            }
+        }
     }
 }
 section#OurVisibleImpact {
@@ -392,6 +445,46 @@ section#HelpMakeItHappen {
         margin:2em;
     }
 }
+
+section#ThoughtsFromOurCommunity {
+    .content {
+        margin: 2em;
+        text-align: center;
+
+        .testimonials {
+            .nav {
+                li {
+                    &.active {
+                        img.photo {
+                            width: 100%;
+                        }
+                    }
+                    img {
+                        width: 100%;
+                        &.photo {
+                            width: 65%;
+                        }
+                    }
+                }
+            }
+
+            .testimonial {
+                .name {
+                    color: $red;
+                    margin: 0;
+                }
+                .title {
+                    font-size: $p-font-size-small;
+                    font-family: 'Montserrat';
+                    font-weight: 500;
+                }
+                
+            }
+        }
+    }
+}
+
+
 // ==================== <== FOOTER ==> ======================
 
 footer {
@@ -400,10 +493,11 @@ footer {
     background-color: $gray-300;
     text-align: center;
     height: 800px;
-
+ 
     .content {
         position: relative;
         z-index: 100;
+        
     }
 
     h1 {
@@ -418,6 +512,19 @@ footer {
             img {
                 width: 80%;
             }
+        }
+    }
+
+    .donate-btn {
+        //position: relative;
+        background-color: $red;
+        color: $white;
+        letter-spacing: .15rem;
+        padding: .5rem;
+        display: inline;
+        text-transform: uppercase;
+        img {
+            width: 1%;
         }
     }
 
@@ -506,6 +613,21 @@ footer {
             width: 43%;
             left: 9%;
             top: 5%;
+
+            .quote {
+                position: relative;
+                &::before {
+                    content: "";
+                    background-image: url(img/quotation-marks@2x.png);
+                    background-size: 100%;
+                    width: 17%;
+                    height: 48.5%;
+                    display: inline-block;
+                    position: absolute;
+                    right: 97%;
+                    bottom: 74%;
+                }
+            }
         }
 
         .img-grid {
@@ -569,16 +691,24 @@ footer {
         .content {
             position: absolute;
             width: 40%;
-            left: 10%;
+            left: 8%;
             top: 8%;
             text-align: left;
         }   
+
+        .program-slider {
+            position: absolute;
+            width: 43%;
+            left: 52%;
+            top: 42%;
+        }
+
     }
     section#OurVisibleImpact { // Our Visible Impact
         position: relative;
         height: 110vw;
         .content {
-            width: 60%;
+            width: 47.5%;
             margin: 0 auto 10%;
         }
         .stats {
@@ -684,8 +814,33 @@ footer {
     }
 
     section#ThoughtsFromOurCommunity {
-        height: 40vw;
-        text-align: center;
+        //height: 40vw;
+
+        .content {
+            margin: 10em;
+
+            .testimonials {
+                width: 70%;
+                .testimonial {
+                    .quote {
+                        margin: 1em 5em;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            background-image: url(img/quotation-marks@2x.png);
+                            background-size: 100%;
+                            width: 17%;
+                            height: 75%;
+                            display: inline-block;
+                            position: absolute;
+                            right: 96%;
+                            bottom: 65%;
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 
     footer {
