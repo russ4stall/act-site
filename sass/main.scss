@@ -119,7 +119,7 @@ li {
     transition: all 0.3s ease;
     
     &:hover {
-        background-color: darken($red, 10%) !important;
+        background-color: darken($red, 10%);
     }
 
     &.btn-inverse {
@@ -178,7 +178,7 @@ $nav-height: 3.5rem;
 
     .donate-btn {
         //position: relative;
-        background-color: $red;
+        //background-color: $red;
         color: $white;
         letter-spacing: .15rem;
         padding: .5rem;
