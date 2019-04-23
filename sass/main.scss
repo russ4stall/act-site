@@ -183,8 +183,11 @@ li {
         }
 
         &.social {
-            padding-top: .5rem;
+            padding-top: 1rem;
             margin-left: auto;
+            li a img {
+                width: 2em;
+            }
         }
     } 
     
@@ -192,7 +195,7 @@ li {
         position: absolute;
         left: 0;
         top: 0;
-        margin: 1.5rem;
+        margin: 1rem;
         width: 3rem;
     }
 
@@ -223,7 +226,8 @@ li {
             width: 100%;
             background: $red;         
             opacity: 1;
-            left: 0;                
+            left: 0;         
+            border-radius: 50px;       
             transform: rotate(0deg);                
             transition: .3s ease-in-out;
             &:nth-child(1) {
@@ -344,7 +348,10 @@ section#TheActModel {
             width: 85%;
             margin: 0 auto;
             display: flex;
-
+            .act-a-toggle, .act-c-toggle, .act-t-toggle { 
+                transition: fill .4s ease;
+                fill: $wafer;
+             }
             .act-toggle:hover { cursor: pointer; }
             .act-a-toggle.active { fill: $red; }
             .act-c-toggle.active { fill: $gold; }
@@ -360,9 +367,13 @@ section#TheActModel {
                 
                 &.act-toggle:hover { cursor: pointer; }
 
-                h5 {
+                h5, .dot {
                     margin-bottom: 1em;
                     color: $wafer;
+                    transition: color .4s ease;
+                }
+                .dot {
+                    transition: background-color .4s ease;
                 }
                 
                 &.act-a-toggle.active {
@@ -407,8 +418,14 @@ section#OurProgram {
         .program-titles {
             li {
                 &:hover { cursor: pointer; }
-                h5 { color: lighten($gray-100, 50%); }
-                .dot { background-color: lighten($gray-100, 50%); }
+                h5 { 
+                    color: lighten($gray-100, 50%);
+                    transition: color .4s ease;
+                 }
+                .dot { 
+                    background-color: lighten($gray-100, 50%);
+                    transition: background-color .4s ease;
+                 }
 
                 &.active {
                     h5 { color: $red; }
