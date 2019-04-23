@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ACT House</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/yu2fvl.css">
     <link rel="shortcut icon" href="act-house-32x32.png" type="image/x-icon"> 
 </head>
 
@@ -19,7 +20,7 @@
                     DONATE
                 </a>
             </li>
-            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#" id="PartnerWithUsLink">Partner With Us</a></li>
         </ul>
         <img class="brand-logo hide-mobile" src="img/nav-icon-house.svg" alt="">
         <ul class="social">
@@ -65,7 +66,7 @@
                 </p>
                 <img src="img/quotation-marks@2x.png" alt="">
             </div>
-
+            <a id="ActVid" href="https://www.youtube.com/watch?v=_3pWGnx65qs&ab_channel=DominickArdis" class="play-button"><div class='triangle'></div></a>
             <img class="img-grid hide-mobile" src="img/img-grid.png" alt="">
             <img class="dot-grid hide-mobile" src="img/dot-grid-red@2x.png" alt="">
 
@@ -344,7 +345,8 @@
         </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="js/yu2fvl.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".act-toggle").click(function () {
@@ -360,6 +362,8 @@
                 $(".program-toggle").removeClass("active");
                 $(selector).addClass("active");
             });
+
+            $("#ActVid").yu2fvl();
         });
     </script>
 
