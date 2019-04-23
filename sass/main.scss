@@ -152,6 +152,7 @@ $nav-height: 3.5rem;
     padding: 1rem 2rem;
     height: $nav-height;
     display: flex;
+    z-index: 1000;
     ul {
         display: flex;
         line-height: $nav-height;
