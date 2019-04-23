@@ -622,7 +622,7 @@ footer {
     $nav-height: 3.5rem;
     .top-nav {
         padding: 1rem 2rem;
-        height: $nav-height;
+        max-height: $nav-height;
         display: flex;
         z-index: 1000;
         ul {
@@ -630,6 +630,7 @@ footer {
             line-height: $nav-height;
             padding: 0;
             margin: 0;
+            &:first-of-type { margin: 0; }
             li {
                 padding: 0 10px;
                 &:first-of-type { padding-left: 0; }
@@ -642,6 +643,8 @@ footer {
             }
         } 
         
+        #nav-toggle { display: none; }
+
         .brand-logo { 
             left: 50%;
             //margin: .5rem; 
