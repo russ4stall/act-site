@@ -111,7 +111,8 @@ li {
 .mx-auto { margin-left: auto; margin-right: auto; }
 .d-block { display: block; }
 .d-inline-block { display: inline-block; }
-.hide-mobile { display: none; }
+.hide-mobile { display: none !important; }
+.show-mobile { display: inherit !important; }
 .text-sm { font-size: $p-font-size-small }
 .text-md { font-size: $p-font-size-medium }
 .text-lg { font-size: $p-font-size-large }
@@ -322,6 +323,38 @@ section.home-hero {
 }
 
 section#WhyWeAct {
+    position: relative;
+    img.act-video-thumb {
+        width: 90%;
+        margin: 2em auto;
+        display: block;
+    }
+
+    .play-button {
+        z-index: 1000;
+        width: 8em;
+        height: 8em;
+        background-color: rgba($black, 0.5);
+        border-radius: 50%;
+        position: absolute;
+        right: 41%;
+        top: 8%;
+    
+        &:hover {
+            background-color: rgba($black, .8);
+            .triangle { border-color: transparent transparent transparent rgba($white, .8); }
+        }
+    
+        .triangle {
+            border-style: solid;
+            border-width: 1.5em 0 1.5em 3em;
+            border-color: transparent transparent transparent rgba($white, .5);
+            position: absolute;
+            left: 37%;
+            top: 32%;
+        }
+    }
+
     .content {
         position: relative;
         padding: 5em 3em;
@@ -636,7 +669,8 @@ footer {
 
 @media only screen and (min-width: 768px) {
     html { font-size: .8vw }
-    .hide-mobile { display: inherit; }
+    .show-mobile { display: none !important; }
+    .hide-mobile { display: inherit !important; }
     section { position: relative; }
 
     $nav-height: 3.5rem;
@@ -729,28 +763,8 @@ footer {
         }
 
         .play-button {
-            z-index: 1000;
-            width: 8em;
-            height: 8em;
-            background-color: rgba($black, 0.5);
-            border-radius: 50%;
-            position: absolute;
             right: 21.5%;
-            top: 23%;
-        
-            &:hover {
-                background-color: rgba($black, .8);
-                .triangle { border-color: transparent transparent transparent rgba($white, .8); }
-            }
-        
-            .triangle {
-                border-style: solid;
-                border-width: 1.5em 0 1.5em 3em;
-                border-color: transparent transparent transparent rgba($white, .5);
-                position: absolute;
-                left: 37%;
-                top: 32%;
-            }
+            top: 23%
         }
 
         .img-grid {
