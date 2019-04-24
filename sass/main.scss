@@ -482,14 +482,18 @@ section#EmpoweringMinorityTalent {
 
 section#HelpMakeItHappen {
     background-color: $pearlbush;
-    
+    .content { padding: 1em 3em; }
     .partner-links {
-        bottom: 50%;
+        //bottom: 50%;
         .link-box {
+            background-color: $gray-200;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin: 1em;
+            margin: 2em auto;
+            border-radius: .2em;
+            width: 38em;
+            height: 20em;
             img {
                 position: absolute;
                 top: 0;
@@ -501,13 +505,15 @@ section#HelpMakeItHappen {
                 color: $white;
                 position: relative;
                 z-index: 100;
-                margin-top: .75em;
+                margin-top: 1em;
                 margin-bottom: .25em;
             }
             .btn {
                 position: relative;
                 z-index: 100;
                 margin-bottom: 3em;
+                padding: 1em 0;
+                width: 50%
             }
         }
     }
@@ -906,13 +912,8 @@ footer {
                 margin: auto;
                 .link-box {
                     width: 32%;
+                    height: 19em;
                     margin: auto;
-                    h2 {    
-                        margin-top: 1.5em;
-                    }
-                    .btn {
-                        margin-bottom: 4em;
-                    }
                 }
             }
         }
