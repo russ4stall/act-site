@@ -476,7 +476,7 @@ section#EmpoweringMinorityTalent {
     .content {
         padding: 0 3em;
         margin-top: -8em;
-        margin-bottom: 25em
+        margin-bottom: 5em
 ;    }
 }
 
@@ -519,6 +519,9 @@ section#HelpMakeItHappen {
     }
 
     .powerful-content {
+        h1 {
+            color: $gray-200;
+        }
         padding: 1em 3em;
         margin: 1em;
     }
@@ -526,7 +529,7 @@ section#HelpMakeItHappen {
         text-align: center;
         .logo {
             width: 30%;
-            margin:3em;
+            margin: 3em;
         }
     }
     
@@ -534,27 +537,17 @@ section#HelpMakeItHappen {
 
 section#ThoughtsFromOurCommunity {
     .content {
-        margin: 2em;
+        padding: 1em 3em;
+        margin-bottom: 10em;
         text-align: center;
 
         .testimonials {
-            .nav {
-                li {
-                    &.active {
-                        img.photo {
-                            width: 100%;
-                        }
-                    }
-                    img {
-                        width: 100%;
-                        &.photo {
-                            width: 65%;
-                        }
-                    }
-                }
-            }
 
             .testimonial {
+                .photo {
+                    width: 50%;
+                    margin: auto;
+                }
                 .name {
                     color: $red;
                     margin: 0;
@@ -643,6 +636,10 @@ footer {
 // ======================= <== MEDIA QUERIES ==> ================================
 
 @media only screen and (min-width: 768px) {
+    html { font-size: .8vw }
+    .hide-mobile { display: inherit; }
+    section { position: relative; }
+
     $nav-height: 3.5rem;
     .top-nav {
         padding: 1rem 2rem;
@@ -675,12 +672,6 @@ footer {
             //width: 2rem;
         }
     }
-
-
-
-    html { font-size: .8vw }
-    .hide-mobile { display: inherit; }
-    section { position: relative; }
 
     section#HomeHero {
         margin: 0 2em;
@@ -951,14 +942,20 @@ footer {
         //height: 40vw;
 
         .content {
-            margin: 10em;
+            margin: 10em auto;
+            width: 90%;
 
             .testimonials {
-                width: 70%;
+                display: flex;
+                align-items: flex-start;
                 .testimonial {
-                    .quote {
-                        margin: 1em 5em;
-                        position: relative;
+                    padding: 0 1em;
+                    //margin: auto;
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    //align-self: flex-start;
+                    p  {
+                        font-size: $p-font-size-medium;
                     }
                 }
             }
